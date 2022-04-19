@@ -1,0 +1,127 @@
+live_config_reload: true
+background_opacity: 0.25
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - 'tmux attach || tmux'
+
+# alt key
+window:
+  dimensions:
+    columns: 120
+    lines: 60
+
+  padding:
+    x: 10
+    y: 10
+  dynamic_padding: false 
+  startup_mode: Maximized
+  decorations: none
+
+colors:
+  primary:
+    background: "#080810"
+    #foreground: "#9A9CF7"
+    #foreground: '#ecf0c1'
+    foreground: '#E0F8CF'
+
+  selection:
+    text: CellForeground
+    background: '#565656'
+
+  normal:
+    black:   "#0B111D"
+    red:     "#d6157b"
+    green:   "#0aff6d"
+    yellow:  "#F0F79A"
+    #blue:    "#22a3d1"
+    blue:    '#86C06C'
+    #magenta: "#621cf4"
+    magenta: '#f2ce00'
+    cyan:    "#22b9b5"
+    #cyan:    '#7a5ccc'
+    white:   "#E0F8CF"
+
+  bright:
+    black:   '#686f9a'
+    red:     '#d6157b'
+    green:   '#5ccc96'
+    yellow:  '#b3a1e6'
+    blue:    '#86C06C'
+    magenta: '#f2ce00'
+    #cyan:    '#7a5ccc'
+    cyan:    '#22b9b5'
+    white:   '#E0F8CF'
+
+  
+font:
+  normal:
+    family: "ShureTechMono Nerd Font"
+      #family: "CaskaydiaCove Nerd Font"
+  bold:
+    family: "Inconsolata Nerd Font"
+  italic:
+    family: "ShureTechMono Nerd Font"
+  bold_italic:
+    family: "Inconsolata Nerd Font"
+
+  # 字大小
+  size: 17.5 
+
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+  # Tab
+  tabspaces: 4
+
+ # window:
+  # padding:
+  # x: 2
+  # y: 2
+
+scrolling:
+# 回滚缓冲区中的最大行数,指定“0”将禁用滚动。
+  history: 10000
+
+# 滚动行数 
+  multiplier: 10
+
+draw_bold_text_with_bright_colors: true
+
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+  save_to_clipboard: true
+
+live_config_reload: true
+
+key_bindings:
+  - { key: V, mods: command, action: Paste }
+  - { key: C, mods: command, action: Copy }
+  - { key: Comma, mods: Command,  command:
+      {program: "sh", args: ["-c","open ~/.config/alacritty/alacritty.yml"]}     }
+  - { key: N, mods: Command, action: SpawnNewInstance }
+  - { key: Space, mods: Alt, chars: " " }
+  - { key: Back, mods: Super, chars: "\x15" } # delete word/line
+    #  - { key: Left,     mods: Alt,     chars: "\x1bb"                       } # one word left
+    #  - { key: Right,    mods: Alt,     chars: "\x1bf"                       } # one word right
+    #  - { key: Left,     mods: Command, chars: "\x1bOH",   mode: AppCursor   } # Home
+    #  - { key: Right,    mods: Command, chars: "\x1bOF",   mode: AppCursor   } # End
+  - { key: F,    mods: Alt, chars: "\x1bf" }
+  - { key: B,    mods: Alt, chars: "\x1bb" }
+  - { key: Key0, mods: Alt, chars: "\x1b0" }
+  - { key: Key1, mods: Alt, chars: "\x1b1" }
+  - { key: Key2, mods: Alt, chars: "\x1b2" }
+  - { key: Key3, mods: Alt, chars: "\x1b3" }
+  - { key: Key4, mods: Alt, chars: "\x1b4" }
+  - { key: Key5, mods: Alt, chars: "\x1b5" }
+  - { key: Key6, mods: Alt, chars: "\x1b6" }
+  - { key: Key7, mods: Alt, chars: "\x1b7" }
+  - { key: Key8, mods: Alt, chars: "\x1b8" }
+  - { key: Key9, mods: Alt, chars: "\x1b9" }
